@@ -13,6 +13,13 @@ knitr::opts_chunk$set(echo = TRUE)
 TEST CHANGE
 ## Calculators
 
+**Other**
+``` {r}
+# Total number of outcomes:
+  # Multiply the number of outcomes for each event together (RedBook p12)
+# "Digits" are any numerals from 0 to 9. That is, 0 through 9 are all digits.
+```
+
 **Expected Value**
 ``` {r}
 
@@ -43,9 +50,9 @@ expVal3 = sum(vals3*probs3)
 
 **Binomial Distribution**
 ``` {r}
-probOfSuccess = 1/3
-probSize = 32
-numTrials = 24
+probOfSuccess = 0.96 # Probability of getting a question correct, etc.
+probSize = 13 # Total number of questions answered, etc.
+numTrials = 13 # Number of questions answered correctly, etc.
 
 # Success on less than numOfTrials
 LTNumTrials = c(0 : numTrials - 1)
