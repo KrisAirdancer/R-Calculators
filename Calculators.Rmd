@@ -35,12 +35,12 @@ Std_of_X = function(probs, vals) {
   return(sqrt(Var_of_X(probs, vals)))
 }
 
-probs1 = c(12/52, 40/52)
-vals1 = c(30, -2)
-probs2 = c(1/6)
-vals2 = c(1:6)
-probs3 = c(0.3, 0.25, 0.15, 0.05, 0.10, 0.15)
-vals3 = c(1:6)
+probs1 = c(1/52, 1/51, 1/50, 1/49, 1/48)
+vals1 = c(1:5)
+probs2 = c(1/4, 1/12, 2/3)
+vals2 = c(10, 25, -5)
+probs3 = c(6/7, 1/7)
+vals3 = c(0, 1)
 
 # Expected value of 1
 E_of_X(probs1, vals1)
@@ -80,9 +80,9 @@ Std_of_X(probs3, vals3)
 
 **Binomial Distribution**
 ``` {r}
-probOfSuccess = 0.15 # Probability of getting a question correct, etc.
-probSize = 10 # Total number of questions answered, etc.
-numTrials = 1 # Number of questions answered correctly, etc.
+probOfSuccess = c(0.91) # Probability of getting a question correct, etc.
+probSize = 5 # Total number of questions answered, etc.
+numTrials = 4 # Number of questions answered correctly, etc.
 
 # Success on less than numOfTrials
 LTNumTrials = c(0 : numTrials - 1)
@@ -105,7 +105,14 @@ sum(dbinom(GTNumTrials, probSize, probOfSuccess))
 
 ```
 
+**Other Calculations**
+``` {r}
+#Standard Deviation
+sd(c(3.5, 3.4, 3.8, 3.6, 2.3))
 
+# n choose k
+choose(52, 4)/choose(52, 5)
+```
 
 
 
