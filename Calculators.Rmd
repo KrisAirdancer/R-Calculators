@@ -41,7 +41,26 @@ fisher.test(contingency_table, conf.level=0.995)
 
 # POINT ESTIMATE
 #(see lab10 section 8 - just above section 9)
-# To compute a point estimate, determine the number of successes...
+# To compute a point estimate, simply calculate the mean or some other metric.
+  # In lab, we took the number of successes (ad clicks) and divided by the total number of visitors. This gave us a point estimate of the ad-click rate.
+
+# CORRELATION COEFFICIENT
+# Notes
+  # The correlation coefficient of two variables in a data set equals to their covariance divided by the product of their individual standard deviations. It is a normalized measurement of how the two are linearly related. 
+    # [See here](http://www.r-tutor.com/elementary-statistics/numerical-measures/covariance)
+
+  # The covariance of two variables x and y in a data set measures how the two are linearly related. A positive covariance would indicate a positive linear relationship between the variables, and a negative covariance would indicate the opposite. 
+    # [See here](http://www.r-tutor.com/elementary-statistics/numerical-measures/correlation-coefficient)
+
+  # R functions
+    # [See here](http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r)
+    # cor() or cor.test():
+
+# Steps to calculate:
+  # 1. Calculate the covariance of each variable
+  # 2. Calculate the standard deviations of each variable
+  # 3. Calcualte teh correlation coefficient
+
 ```
 
 
