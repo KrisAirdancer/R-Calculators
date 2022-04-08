@@ -14,6 +14,82 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Calculators
 
 **WORKSPACE**
+
+```{r, echo=FALSE, cache=TRUE}
+# ***** SHAKESPEARE BYTES *****
+
+sbytes_min = round(min(shakespeare_bytes$bytes))
+sbytes_max = round(max(shakespeare_bytes$bytes))
+
+# Taking samplemeans
+hist(shakespeare_bytes$bytes,
+     breaks=255,
+     freq=FALSE,
+     main="Shakespeare Bytes",
+     xlab="Value of byte")
+
+samplesCount = 2000
+sampleSize = 2
+SSB_N2_Samplemeans = rep(NA, samplesCount)
+for (item in 1:samplesCount) {
+  SSB_N2_Samplemeans[item] = mean(shakespeare_bytes[sample(nrow(shakespeare_bytes), sampleSize), ])
+}
+
+hist(SSB_N2_Samplemeans,
+     breaks=255,
+     freq=FALSE,
+     main="Shakespeare Bytes - sampleSize = 2",
+     xlab="Value of byte")
+
+samplesCount = 2000
+sampleSize = 4
+SSB_N4_Samplemeans = rep(NA, samplesCount)
+for (item in 1:samplesCount) {
+  SSB_N4_Samplemeans[item] = mean(shakespeare_bytes[sample(nrow(shakespeare_bytes), sampleSize), ])
+}
+
+hist(SSB_N4_Samplemeans,
+     breaks=255,
+     freq=FALSE,
+     main="Shakespeare Bytes - sampleSize = 4",
+     xlab="Value of byte")
+
+samplesCount = 2000
+sampleSize = 8
+SSB_N8_Samplemeans = rep(NA, samplesCount)
+for (item in 1:samplesCount) {
+  SSB_N8_Samplemeans[item] = mean(shakespeare_bytes[sample(nrow(shakespeare_bytes), sampleSize), ])
+}
+
+hist(SSB_N8_Samplemeans,
+     breaks=255,
+     freq=FALSE,
+     main="Shakespeare Bytes - sampleSize = 8",
+     xlab="Value of byte")
+
+samplesCount = 2000
+sampleSize = 16
+SSB_N16_Samplemeans = rep(NA, samplesCount)
+for (item in 1:samplesCount) {
+  SSB_N16_Samplemeans[item] = mean(shakespeare_bytes[sample(nrow(shakespeare_bytes), sampleSize), ])
+}
+plot(min(SSB_N16_Samplemeans):max(SSB_N16_Samplemeans),
+     dnorm(min(SSB_N16_Samplemeans):max(SSB_N16_Samplemeans),
+           mean=mean(SSB_N16_Samplemeans),
+           sd=sd(SSB_N16_Samplemeans)),
+     main="Shakespeare Bytes - sampleSize = 16 vs Normal",
+     xlab="Value of byte",
+     ylab="Density",
+     ylim=c(0,0.07)
+)
+hist(SSB_N16_Samplemeans,
+     breaks=255,
+     col=rgb(0,0,0,alpha=0.1),
+     freq=FALSE,
+     add=TRUE
+)
+```
+
 ```{r}
 
 
